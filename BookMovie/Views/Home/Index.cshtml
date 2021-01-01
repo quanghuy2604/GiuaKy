@@ -1,0 +1,53 @@
+﻿@model IEnumerable<BookMovie.Models.LichChieu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lich chieu</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+               Ma dat ve :
+            </th>
+            <th>
+                Ten Phim :
+            </th>
+            <th>
+                Ten rap :
+            </th>
+            <th>
+                Gio khoi chieu :
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idLC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenphim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenrap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.giochieu)
+            </td>
+            <td>
+                <a asp-action="Book" asp-route-id="@item.idLC">Dat ve</a>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

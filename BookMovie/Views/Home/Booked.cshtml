@@ -1,0 +1,43 @@
+﻿@model IEnumerable<BookMovie.Models.DatVe>
+
+@{
+    ViewData["Title"] = "Booked";
+}
+
+<h1>Booked</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                So dien thoai : 
+            </th>
+            <th>
+               Ma phim : 
+            </th>
+            <th>
+                So luong ve : 
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.sdt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenrap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sove)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>
